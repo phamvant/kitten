@@ -52,6 +52,10 @@ class IntroPage extends StatelessWidget {
               onTap: () {
                 Navigator.pushNamed(context, 'mainpage');
               },
+              icon: const Icon(
+                Icons.arrow_forward,
+                color: Colors.white,
+              ),
             ),
 
             const SizedBox(

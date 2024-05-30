@@ -28,7 +28,13 @@ class RedeemCard extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-              BlurButton(buttonContent: "Redeem"),
+              BlurButton(
+                buttonContent: "Redeem",
+                icon: Icon(
+                  Icons.arrow_forward,
+                  color: Colors.white,
+                ),
+              ),
             ],
           ),
 

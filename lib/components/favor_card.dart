@@ -23,10 +23,30 @@ class FavorCard extends StatelessWidget {
                 height: 100,
               ),
               const SizedBox(
-                width: 20,
+                width: 30,
               ),
-              const Column(
-                children: [Text("data"), Text("data")],
+              SizedBox(
+                height: 80,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Real Kitten",
+                      style: TextStyle(
+                        color: Colors.grey.shade700,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                      ),
+                    ),
+                    Text(
+                      "mass: 3kg",
+                      style: TextStyle(
+                        color: Colors.grey.shade700,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),

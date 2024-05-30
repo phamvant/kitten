@@ -4,6 +4,7 @@ import 'package:flutter_application_1/components/favor_card.dart';
 import 'package:flutter_application_1/components/kitten_tile.dart';
 import 'package:flutter_application_1/components/search_bar.dart';
 import 'package:flutter_application_1/models/kitten.dart';
+import 'package:flutter_application_1/pages/info_page.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -19,14 +20,26 @@ class _MainPageState extends State<MainPage> {
     Kitten(name: "Real Kitten", imagePath: "images/kitten3.png")
   ];
 
+  void navigateToCatDetails(int index) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (BuildContext context) => InfoPage(kitten: _kittenList[index]),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey.shade200,
       appBar: AppBar(
-        leading: const Icon(Icons.menu),
+        // leading: const Icon(Icons.menu),
         title: const Text("Kitten"),
+        backgroundColor: Colors.transparent,
       ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Padding(
             padding: const EdgeInsets.all(20.0),
@@ -68,6 +81,7 @@ class _MainPageState extends State<MainPage> {
               itemCount: _kittenList.length,
               itemBuilder: (context, index) => KittenTile(
                 kitten: _kittenList[index],
+                onTap: () => navigateToCatDetails(index),
               ),
             ),
           ),

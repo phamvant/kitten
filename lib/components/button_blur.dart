@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 class BlurButton extends StatelessWidget {
   final String _buttonContent;
   final Function()? _onTap;
+  final Icon? _icon;
 
   const BlurButton(
-      {super.key, required String buttonContent, Function()? onTap})
+      {super.key, required String buttonContent, Function()? onTap, Icon? icon})
       : _buttonContent = buttonContent,
-        _onTap = onTap;
+        _onTap = onTap,
+        _icon = icon;
 
   @override
   Widget build(BuildContext context) {
@@ -26,15 +28,15 @@ class BlurButton extends StatelessWidget {
               _buttonContent,
               style: const TextStyle(
                 color: Colors.white,
+                fontSize: 18,
               ),
             ),
             const SizedBox(
               width: 10,
             ),
-            const Icon(
-              Icons.arrow_forward,
-              color: Colors.white,
-            )
+            if (_icon != null) ...[
+              _icon,
+            ],
           ],
         ),
       ),
